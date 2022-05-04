@@ -14,6 +14,18 @@ export class SubmitFeedbackUseCase {
   ) {}
 
   async execute({ type, comment, screenshot }: SubmitFeedbackUseCaseRequest) {
+    if (!type) {
+      throw new Error("Type is required");
+    }
+
+    if (!comment) {
+      throw new Error("Comment is required");
+    }
+
+    if (screenshot && !screenshot.startsWith("data:image/png;base64")) {
+      throw new Error("Screenshot must be a base64 encoded image");
+    }
+
     await this.feedbacksRepository.create({ type, comment, screenshot });
 
     await this.mailAdapter.sendMail({
