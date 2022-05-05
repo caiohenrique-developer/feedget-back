@@ -37,7 +37,8 @@ export class SubmitFeedbackUseCase {
             <p>Inspect it using the tabs you see above and learn how this email can be improved.</p>
             <h4>Tipo do feedback: ${type}</h4>
             <p>Mensagem: ${comment}</p>
-            <p>Imagem de screenshot: ${screenshot}</p>
+            <p>Imagem de screenshot: <img src="${screenshot}" alt="Imagem para o feedback" style="width: 100%;" /></p>
+
             <img alt="Inspect with Tabs" src="https://assets-examples.mailtrap.io/integration-examples/welcome.png" style="width: 100%;">
             <p>Now send your email using our fake SMTP server and integration of your choice!</p>
             <p>Good luck! Hope it works.</p>
