@@ -16,6 +16,8 @@
   "keywords": [],
   "scripts": {
     "commit": "git-cz",
+    "build": "tsc",
+    "start": "node ./dist/server.js",
     "dev": "ts-node-dev ./src/server.ts",
     "test": "jest"
   },
